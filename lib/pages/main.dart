@@ -12,9 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlmiyaPage(
-      child: MainCard(
-        title: "שלום לך!",
-        child: Text("test test"),
+      child: Column(
+        children: [
+          MainCard(
+            title: "שלום אורנית!",
+            child: Center(
+              child: Text("test"),
+            ),
+          ),
+        ],
       ),
     );
   }
