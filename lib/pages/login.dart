@@ -3,6 +3,7 @@ import 'package:Almiya/components/button.dart';
 import 'package:Almiya/components/text_input.dart';
 import 'package:Almiya/consts.dart';
 import 'package:flutter/material.dart';
+import 'package:Almiya/almiya_icons.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -11,7 +12,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final double optionSize = 100;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +19,23 @@ class MyApp extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            children: [
+              Container(
+                height: 110,
+                child: Image(
+                  image: AssetImage("assets/images/logo.png"),
+                  fit: BoxFit.fill,
+                ),
+              )
+            ],
+          ),
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-                height: 300,
+                height: 280,
                 child: Image(
-                  image: AssetImage("lib/pictures/login-logo.jpeg"),
+                  image: AssetImage("assets/images/login.png"),
                   fit: BoxFit.fill,
                 ),
               )
@@ -56,7 +67,7 @@ class MyApp extends StatelessWidget {
                 child: Material(
                   type: MaterialType.transparency,
                   child: IconedTextField(
-                    icon: Icons.face,
+                    icon: Almiya.face,
                     hintText: "שם משתמשת",
                   ),
                 ),
