@@ -101,7 +101,7 @@ class MainCard extends StatelessWidget {
           size: Size.infinite,
           painter: CardPainter(title: this.title),
           child: Padding(
-            padding: EdgeInsets.fromLTRB(10, 80, 10, 10),
+            padding: EdgeInsets.fromLTRB(0, 80, 0, 0),
             child: this.child,
           ),
         ),

@@ -35,6 +35,8 @@ class NewUserPage extends StatelessWidget {
     ],
   );
 
+  final double textScale = 1.4;
+
   @override
   Widget build(BuildContext context) {
     return AlmiyaPage(
@@ -56,20 +58,20 @@ class NewUserPage extends StatelessWidget {
             textDirection: TextDirection.rtl,
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
                 child: MainCard(
-                  width: 340,
-                  height: 520,
+                  width: 320,
+                  height: 460,
                   title: "שלום לך!",
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
+                    padding: EdgeInsets.fromLTRB(32, 5, 32, 0),
                     child: Column(
                       children: [
                         Text(
                           this.firstParagragh,
                           maxLines: 6,
                           textDirection: TextDirection.rtl,
-                          textScaleFactor: 1.6,
+                          textScaleFactor: this.textScale,
                         ),
                         Divider(
                           color: Colors.black,
@@ -81,7 +83,7 @@ class NewUserPage extends StatelessWidget {
                         RichText(
                           text: this.secondParagragh,
                           textDirection: TextDirection.rtl,
-                          textScaleFactor: 1.6,
+                          textScaleFactor: this.textScale,
                         ),
                         Divider(
                           color: Colors.black,
@@ -93,7 +95,7 @@ class NewUserPage extends StatelessWidget {
                         RichText(
                           text: this.thirdParagragh,
                           textDirection: TextDirection.rtl,
-                          textScaleFactor: 1.6,
+                          textScaleFactor: this.textScale,
                         ),
                       ],
                     ),
