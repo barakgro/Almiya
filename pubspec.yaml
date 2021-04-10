@@ -45,7 +45,18 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/images/login.png
+    - assets/images/entrance.png
+    - assets/images/asterisk.jpeg
+    - assets/images/book.jpeg
+    - assets/images/connect.jpeg
+    - assets/images/face.jpeg
+    - assets/images/lock.jpeg
+    - assets/images/message.jpeg
+    - assets/images/phone.jpeg
+    - assets/images/search.jpeg
+    - assets/images/logo.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -72,5 +83,9 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: Almiya
+      fonts:
+        - asset: assets/fonts/Almiya.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
