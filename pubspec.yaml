@@ -84,9 +84,6 @@ flutter:
   #         weight: 700
   #
   fonts:
-    - family: AppIcons
-      fonts:
-        - asset: assets/fonts/MyFlutterApp.ttf
     - family: Almiya
       fonts:
         - asset: assets/fonts/Almiya.ttf

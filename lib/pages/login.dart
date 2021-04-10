@@ -5,14 +5,7 @@ import 'package:Almiya/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:Almiya/almiya_icons.dart';
 
-void main() {
-  runApp(new MaterialApp(
-    home: new MyApp(),
-  ));
-}
-
-class MyApp extends StatelessWidget {
-
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlmiyaPage(
@@ -97,6 +90,7 @@ class MyApp extends StatelessWidget {
                     type: MaterialType.transparency,
                     child: Button(
                       text: "הכנסי",
+                      onPressed: () => Navigator.pushNamed(context, '/homePage'),
                     )),
               ),
             ],
