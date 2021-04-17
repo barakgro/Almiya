@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/take_me.dart';
 
 class BottomNavigationMenu extends StatefulWidget {
   BottomNavigationMenu({Key key}) : super(key: key);
@@ -22,23 +23,23 @@ class BottomNavigationMenuState extends State<BottomNavigationMenu> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book_outlined),
-            label: 'מידע',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'כתבי לנו',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.all_inclusive),
-            label: 'ארגונים',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xff542d53),
-        onTap: _onItemTapped,
-      );
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.menu_book_outlined),
+          label: 'מידע',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.chat),
+          label: 'כתבי לנו',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.all_inclusive),
+          label: 'ארגונים',
+        ),
+      ],
+      currentIndex: _selectedIndex,
+      selectedItemColor: Color(0xff542d53),
+      onTap: _onItemTapped,
+    );
   }
 }

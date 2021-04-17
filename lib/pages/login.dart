@@ -1,5 +1,6 @@
 import 'package:Almiya/components/almiya_page.dart';
 import 'package:Almiya/components/button.dart';
+import 'package:Almiya/components/logo.dart';
 import 'package:Almiya/components/text_input.dart';
 import 'package:Almiya/consts.dart';
 import 'package:flutter/material.dart';
@@ -11,17 +12,7 @@ class LoginPage extends StatelessWidget {
     return AlmiyaPage(
       child: Column(
         children: [
-          Row(
-            children: [
-              Container(
-                height: 110,
-                child: Image(
-                  image: AssetImage("assets/images/logo.png"),
-                  fit: BoxFit.fill,
-                ),
-              )
-            ],
-          ),
+          Logo(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

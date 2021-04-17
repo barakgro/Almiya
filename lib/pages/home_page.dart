@@ -1,3 +1,4 @@
+import 'package:Almiya/components/logo.dart';
 import 'package:flutter/material.dart';
 import 'package:Almiya/components/main_card.dart';
 import 'package:Almiya/components/almiya_page.dart';
@@ -13,25 +14,7 @@ class HomePage extends StatelessWidget {
       body: AlmiyaPage(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 100,
-                  padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
-                  child: Material(
-                    type: MaterialType.transparency,
-                    child: Text(
-                      "logo",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            Logo(),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
