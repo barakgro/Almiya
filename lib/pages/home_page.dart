@@ -1,11 +1,23 @@
+import 'package:Almiya/almiya_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:Almiya/components/main_card.dart';
 import 'package:Almiya/components/almiya_page.dart';
 import 'package:Almiya/components/menu_option.dart';
 import 'package:Almiya/components/bottom_navigation_menu.dart';
 
+class VerticalDividerHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return VerticalDivider(
+      color: Colors.black,
+      indent: 20,
+      endIndent: 5,
+    );
+  }
+}
+
 class HomePage extends StatelessWidget {
-  final double optionSize = 100;
+  final double optionSize = 90;
 
   @override
   Widget build(BuildContext context) {
@@ -14,108 +26,96 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                   height: 100,
-                  padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
-                  child: Material(
-                    type: MaterialType.transparency,
-                    child: Text(
-                      "logo",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50,
-                      ),
-                    ),
+                  child: Image(
+                    image: AssetImage("assets/images/logo.png"),
+                    fit: BoxFit.fill,
                   ),
                 ),
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-
-                  child: Material(
-                    type: MaterialType.transparency,
-                    child: MainCard(
-                      title: "שלום!",
-                      child: Column(
+            Container(
+              child: Material(
+                type: MaterialType.transparency,
+                child: MainCard(
+                  title: "שלום אורנית,",
+                  height: 480,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Container(
-                                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                                child: Text(
-                                  "איך נוכל לעזור לך היום?",
-                                  textDirection: TextDirection.rtl,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 22),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            textDirection: TextDirection.rtl,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Column(
-                                children: [
-                                  MenuOption(
-                                    "קחו אותי למה שאני צריכה",
-                                    Icons.search,
-                                    optionSize,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  MenuOption(
-                                    "חברו אותי לגופים שיכולים לעזור",
-                                    Icons.link,
-                                    optionSize,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Row(
-                            textDirection: TextDirection.rtl,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Column(
-                                children: [
-                                  MenuOption(
-                                    "הייתי רוצה לכתוב לכם משהו",
-                                    Icons.chat,
-                                    optionSize,
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  MenuOption(
-                                    "יש לי שאלות, אני צריכה מידע",
-                                    Icons.menu_book_sharp,
-                                    optionSize,
-                                  ),
-                                ],
-                              ),
-                            ],
+                          Container(
+                            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                            child: Text(
+                              "איך נוכל לעזור לך היום?",
+                              textDirection: TextDirection.rtl,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 18),
+                            ),
                           ),
                         ],
                       ),
-                    ),
+                      IntrinsicHeight(
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 10),
+                          child: Row(
+                            textDirection: TextDirection.rtl,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              MenuOption(
+                                "קחו אותי למה שאני צריכה",
+                                Almiya.search,
+                                optionSize,
+                                "/whatYouNeedPage",
+                              ),
+                              VerticalDividerHomePage(),
+                              MenuOption(
+                                "חברו אותי לגופים שיכולים לעזור",
+                                Almiya.connect,
+                                optionSize,
+                                "/connectToPlacesPage",
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: Colors.black,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                      IntrinsicHeight(
+                        child: Row(
+                          textDirection: TextDirection.rtl,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            MenuOption(
+                              "הייתי רוצה לכתוב לכם משהו",
+                              Almiya.message,
+                              optionSize,
+                              "/contactUsPage",
+                            ),
+                            VerticalDividerHomePage(),
+                            MenuOption(
+                              "יש לי שאלות, אני צריכה מידע",
+                              Almiya.book,
+                              optionSize,
+                              "/informationPage",
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationMenu(),
     );
   }
 }

@@ -25,6 +25,7 @@ class IconedTextField extends StatelessWidget {
         child: TextField(
           obscureText: this.obscureText,
           autocorrect: true,
+          textDirection: TextDirection.rtl,
           textAlignVertical: TextAlignVertical.bottom,
           textAlign: TextAlign.right,
           decoration: InputDecoration(

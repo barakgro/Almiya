@@ -5,7 +5,19 @@ import 'package:Almiya/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:Almiya/almiya_icons.dart';
 
-class LoginPage extends StatelessWidget {
+class SignUpComplitionPage extends StatelessWidget {
+  final TextSpan pageText = new TextSpan(
+    style: new TextStyle(
+      fontSize: 18.0,
+      color: darkPurple,
+    ),
+    children: <TextSpan>[
+      new TextSpan(
+          text:
+              "אנחנו שמחות להכיר אותך, אורנית\nכדי לאפשר לך יותר פרטיות ולזכור יחד איתך איפה היית כשאת יוצאת וחוזרת, אנא צרי חשבון:"),
+    ],
+  );
+
   @override
   Widget build(BuildContext context) {
     return AlmiyaPage(
@@ -22,36 +34,35 @@ class LoginPage extends StatelessWidget {
               )
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                height: 280,
-                child: Image(
-                  image: AssetImage("assets/images/login.png"),
-                  fit: BoxFit.fill,
-                ),
-              )
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                child: Material(
+          Padding(
+            padding: EdgeInsets.all(25),
+            child: Column(
+              children: [
+                Material(
                   type: MaterialType.transparency,
                   child: Text(
-                    "שמחות שחזרת!",
+                    "תודה!",
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                         color: darkPurple,
-                        fontSize: 25,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-              ),
-            ],
+                Divider(
+                  color: darkPurple,
+                  height: 25,
+                  thickness: 1,
+                  indent: 0,
+                  endIndent: 0,
+                ),
+                RichText(
+                  text: this.pageText,
+                  maxLines: 10,
+                  textDirection: TextDirection.rtl,
+                ),
+              ],
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -87,10 +98,26 @@ class LoginPage extends StatelessWidget {
             children: [
               Container(
                 child: Material(
+                  type: MaterialType.transparency,
+                  child: IconedTextField(
+                    icon: Almiya.asterisk,
+                    hintText: "אימות סיסמה",
+                    obscureText: true,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                child: Material(
                     type: MaterialType.transparency,
                     child: Button(
-                      text: "הכנסי",
-                      onPressed: () => Navigator.pushNamed(context, '/homePage'),
+                      text: "הירשמי",
+                      onPressed: () =>
+                          Navigator.pushNamed(context, '/homePage'),
                     )),
               ),
             ],

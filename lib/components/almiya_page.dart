@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class AlmiyaPage extends StatelessWidget {
-
   AlmiyaPage({
     this.child,
   });
@@ -12,14 +12,20 @@ class AlmiyaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
+    return Scaffold(
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+        decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [lightPurple, lightBlue])),
-      child: this.child,
+              colors: [lightPurple, lightBlue]),
+        ),
+        child: SingleChildScrollView(
+          child: this.child,
+        ),
+      ),
     );
   }
 }
