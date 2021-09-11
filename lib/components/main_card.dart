@@ -17,7 +17,7 @@ class CardPainter extends CustomPainter {
         style: TextStyle(
           fontSize: 22,
           color: this.darkPurple,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w900,
         ),
       ),
       textAlign: TextAlign.center,
@@ -33,10 +33,11 @@ class CardPainter extends CustomPainter {
 
     final double titlePaddingHeight = 40;
     final double titlePaddingWidth = 60;
+    final double topBourdPoint = (titlePainter.height + titlePaddingHeight) / 2;
 
     Path whiteBoard = Path()
       ..addRRect(RRect.fromRectAndRadius(
-          Rect.fromLTWH(0, (titlePainter.height + titlePaddingHeight) / 2, size.width, size.height), Radius.circular(40)));
+          Rect.fromLTWH(0, topBourdPoint, size.width, size.height - topBourdPoint), Radius.circular(40)));
     Path titleHole = Path()
       ..addRRect(RRect.fromRectAndRadius(
           Rect.fromLTWH((size.width / 2) - (titlePainter.width / 2) - (titlePaddingWidth / 2), 0,

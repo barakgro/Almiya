@@ -7,44 +7,53 @@ class MenuOption extends StatelessWidget {
     this.title,
     this.icon,
     this.size,
+    this.url,
   );
 
   final String title;
   final IconData icon;
   final double size;
+  final String url;
 
   final Color darkPurple = Color(0xff542d53);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        GradientIcon(
-          this.icon,
-          this.size,
-          LinearGradient(
-            colors: <Color>[
-              Color(0xff4166a2),
-              Color(0xff985fbc),
-              Color(0xffd46bbd),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        Container(
-          width: this.size*1.2,
-          child: Text(
-            this.title,
-            style: TextStyle(
-              color: darkPurple,
-              fontWeight: FontWeight.bold,
+    return Padding(
+      padding: EdgeInsets.all(5),
+      child: Column(
+        children: [
+          IconButton(
+            iconSize: this.size,
+            icon: GradientIcon(
+              this.icon,
+              this.size,
+              LinearGradient(
+                colors: <Color>[
+                  Color(0xff4166a2),
+                  Color(0xff985fbc),
+                  Color(0xffd46bbd),
+                ],
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+              ),
             ),
-            textAlign: TextAlign.center,
-            textDirection: TextDirection.rtl,
+            onPressed: () => Navigator.pushNamed(context, this.url),
           ),
-        ),
-      ],
+          Container(
+            width: this.size * 1.2,
+            child: Text(
+              this.title,
+              style: TextStyle(
+                color: darkPurple,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+              textDirection: TextDirection.rtl,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
