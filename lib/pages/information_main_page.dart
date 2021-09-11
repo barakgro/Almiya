@@ -30,13 +30,13 @@ class InformationPage extends StatelessWidget {
                       "עמוד מידע",
                       textDirection: TextDirection.rtl,
                       style: TextStyle(
-                          color: darkPurple,
+                          color: themeColor,
                           fontSize: 22,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
                   Divider(
-                    color: darkPurple,
+                    color: themeColor,
                     height: 25,
                     thickness: 1,
                     indent: 0,

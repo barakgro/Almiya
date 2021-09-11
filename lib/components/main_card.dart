@@ -1,3 +1,4 @@
+import 'package:Almiya/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -15,7 +16,7 @@ class CardPainter extends CustomPainter {
       text: TextSpan(
         text: this.title,
         style: TextStyle(
-          fontSize: 22,
+          fontSize: titleSize,
           color: this.darkPurple,
           fontWeight: FontWeight.w900,
         ),

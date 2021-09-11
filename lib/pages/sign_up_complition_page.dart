@@ -1,5 +1,6 @@
 import 'package:Almiya/components/almiya_page.dart';
 import 'package:Almiya/components/button.dart';
+import 'package:Almiya/components/logo.dart';
 import 'package:Almiya/components/text_input.dart';
 import 'package:Almiya/consts.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +8,7 @@ import 'package:Almiya/almiya_icons.dart';
 
 class SignUpComplitionPage extends StatelessWidget {
   final TextSpan pageText = new TextSpan(
-    style: new TextStyle(
-      fontSize: 18.0,
-      color: darkPurple,
-    ),
+    style: baseStyle,
     children: <TextSpan>[
       new TextSpan(
           text:
@@ -25,13 +23,7 @@ class SignUpComplitionPage extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                height: 110,
-                child: Image(
-                  image: AssetImage("assets/images/logo.png"),
-                  fit: BoxFit.fill,
-                ),
-              )
+              Logo(),
             ],
           ),
           Padding(
@@ -43,84 +35,34 @@ class SignUpComplitionPage extends StatelessWidget {
                   child: Text(
                     "תודה!",
                     textDirection: TextDirection.rtl,
-                    style: TextStyle(
-                        color: darkPurple,
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold),
+                    style: titleStyle,
                   ),
                 ),
-                Divider(
-                  color: darkPurple,
-                  height: 25,
-                  thickness: 1,
-                  indent: 0,
-                  endIndent: 0,
-                ),
+                line,
                 RichText(
                   text: this.pageText,
-                  maxLines: 10,
                   textDirection: TextDirection.rtl,
                 ),
               ],
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: IconedTextField(
-                    icon: Almiya.face,
-                    hintText: "שם משתמשת",
-                  ),
-                ),
-              ),
-            ],
+          IconedTextField(
+            icon: Almiya.face,
+            hintText: "שם משתמשת",
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: IconedTextField(
-                    icon: Icons.lock,
-                    hintText: "סיסמה",
-                    obscureText: true,
-                  ),
-                ),
-              ),
-            ],
+          IconedTextField(
+            icon: Icons.lock,
+            hintText: "סיסמה",
+            obscureText: true,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: IconedTextField(
-                    icon: Almiya.asterisk,
-                    hintText: "אימות סיסמה",
-                    obscureText: true,
-                  ),
-                ),
-              ),
-            ],
+          IconedTextField(
+            icon: Almiya.asterisk,
+            hintText: "אימות סיסמה",
+            obscureText: true,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Material(
-                    type: MaterialType.transparency,
-                    child: Button(
-                      text: "הירשמי",
-                      onPressed: () =>
-                          Navigator.pushNamed(context, '/homePage'),
-                    )),
-              ),
-            ],
+          Button(
+            text: "הירשמי",
+            onPressed: () => Navigator.pushNamed(context, '/homePage'),
           ),
         ],
       ),
