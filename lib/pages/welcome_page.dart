@@ -2,13 +2,10 @@ import 'package:Almiya/components/button.dart';
 import 'package:flutter/material.dart';
 import 'package:Almiya/components/almiya_page.dart';
 
-
 class WelcomePage extends StatelessWidget {
-  final double optionSize = 100;
 
   @override
   Widget build(BuildContext context) {
-
     return AlmiyaPage(
       child: Column(
         children: [
@@ -17,7 +14,7 @@ class WelcomePage extends StatelessWidget {
             children: [
               Container(
                 padding: EdgeInsets.fromLTRB(0, 80, 0, 50),
-                height: 540,
+                height: MediaQuery.of(context).size.height * 0.8,
                 child: Image(
                   image: AssetImage("assets/images/entrance.png"),
                   fit: BoxFit.fill,
@@ -29,32 +26,16 @@ class WelcomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             textDirection: TextDirection.rtl,
             children: [
-              Column(
-                children: [
-                  Container(
-                    width: 170,
-                    child: Material(
-                        type: MaterialType.transparency,
-                        child: Button(
-                          text: "חזרתי",
-                          onPressed: () => Navigator.pushNamed(context, '/login'),
-                        )),
-                  ),
-                ],
+              Button(
+                width: MediaQuery.of(context).size.width * 0.45,
+                text: "חזרתי",
+                onPressed: () => Navigator.pushNamed(context, '/login'),
               ),
-              Column(
-                children: [
-                  Container(
-                    width: 170,
-                    child: Material(
-                        type: MaterialType.transparency,
-                        child: Button(
-                          text: "אני חדשה פה",
-                          onPressed: () => Navigator.pushNamed(context, '/newUserPage')
-                        )),
-                  ),
-                ],
-              )
+              Button(
+                  width: MediaQuery.of(context).size.width * 0.45,
+                  text: "אני חדשה פה",
+                  onPressed: () =>
+                      Navigator.pushNamed(context, '/newUserPage')),
             ],
           ),
         ],

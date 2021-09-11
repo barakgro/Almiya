@@ -1,6 +1,6 @@
 import 'package:Almiya/components/almiya_page.dart';
 import 'package:Almiya/components/button.dart';
-import 'package:Almiya/components/main_card.dart';
+import 'package:Almiya/components/logo.dart';
 import 'package:Almiya/components/text_input.dart';
 import 'package:Almiya/consts.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +9,8 @@ import 'package:Almiya/almiya_icons.dart';
 class SignUpPage extends StatelessWidget {
   final TextSpan pageText = new TextSpan(
     style: new TextStyle(
-      fontSize: 18.0,
-      color: darkPurple,
+      fontSize: fontSize,
+      color: themeColor,
     ),
     children: <TextSpan>[
       new TextSpan(
@@ -31,64 +31,28 @@ class SignUpPage extends StatelessWidget {
         children: [
           Row(
             children: [
-              Container(
-                height: 110,
-                child: Image(
-                  image: AssetImage("assets/images/logo.png"),
-                  fit: BoxFit.fill,
-                ),
-              )
+              Logo(),
             ],
           ),
           Padding(
             padding: EdgeInsets.all(25),
             child: RichText(
               text: this.pageText,
-              maxLines: 10,
               textDirection: TextDirection.rtl,
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: IconedTextField(
-                    icon: Almiya.face,
-                    hintText: "קוראים לי",
-                  ),
-                ),
-              ),
-            ],
+          IconedTextField(
+            icon: Almiya.face,
+            hintText: "קוראים לי",
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Material(
-                  type: MaterialType.transparency,
-                  child: IconedTextField(
-                    icon: Icons.phone_iphone,
-                    hintText: "טלפון נייד",
-                  ),
-                ),
-              ),
-            ],
+          IconedTextField(
+            icon: Icons.phone_iphone,
+            hintText: "טלפון נייד",
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Material(
-                    type: MaterialType.transparency,
-                    child: Button(
-                      text: "המשיכי",
-                      onPressed: () =>
-                          Navigator.pushNamed(context, '/signUpComplitionPage'),
-                    )),
-              ),
-            ],
+          Button(
+            text: "המשיכי",
+            onPressed: () =>
+                Navigator.pushNamed(context, '/signUpComplitionPage'),
           ),
         ],
       ),

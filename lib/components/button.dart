@@ -5,35 +5,45 @@ import 'package:flutter/material.dart';
 class Button extends StatelessWidget {
   Button({
     @required this.text,
-    this.width = 320,
+    this.width = 0,
+    this.color = themeColor,
+    this.textColor = buttonTextColor,
     @required this.onPressed,
   });
 
   final String text;
   final double width;
   final Function onPressed;
-  final Color color = darkPurple;
+  final Color color;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
+    var width = this.width == 0 ? MediaQuery.of(context).size.width * 0.85 : this.width;
+    
+    var buttonText = Text(
+      this.text,
+      style: TextStyle(
+        fontSize: fontSize,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+
+    var button = RaisedButton(
+      child: buttonText,
+      textColor: this.textColor,
+      color: this.color,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      onPressed: this.onPressed,
+    );
+
     return Container(
-        width: this.width,
-        height: 65,
-        padding: EdgeInsets.all(7.0),
-        child: RaisedButton(
-          child: Text(
-            this.text,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          textColor: Colors.yellow[100],
-          color: this.color,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-          ),
-          onPressed: this.onPressed,
-        ));
+      width: width,
+      height: 65,
+      padding: EdgeInsets.only(top:7.0, bottom:7.0),
+      child: button,
+    );
   }
 }

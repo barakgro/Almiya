@@ -6,22 +6,24 @@ class IconedTextField extends StatelessWidget {
   IconedTextField({
     @required this.icon,
     @required this.hintText,
-    this.width = 320,
+    this.width = 0,
     this.obscureText = false,
   });
 
   final IconData icon;
   final String hintText;
   final double width;
-  final Color color = darkPurple;
+  final Color color = themeColor;
   final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
+    var width = this.width == 0 ? MediaQuery.of(context).size.width * 0.85 : this.width;
+
     return Container(
-        width: this.width,
+        width: width,
         height: 65,
-        padding: EdgeInsets.all(7.0),
+        padding: EdgeInsets.only(top:7.0, bottom:7.0),
         child: TextField(
           obscureText: this.obscureText,
           autocorrect: true,

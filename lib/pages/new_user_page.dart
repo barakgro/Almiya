@@ -1,57 +1,73 @@
 import 'package:Almiya/components/button.dart';
+import 'package:Almiya/components/logo.dart';
 import 'package:Almiya/components/main_card.dart';
 import 'package:Almiya/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:Almiya/components/almiya_page.dart';
 
 class NewUserPage extends StatelessWidget {
-  final String firstParagragh =
-      "ברוכה הבאה לעלמיא - \nמרחב בטוח ופרטי לנערות. עלמיא תנסה לעזור לך אם את מתמודדת עם הריון, או חושבת שאולי את בהריון.";
-  final TextSpan secondParagragh = new TextSpan(
-    style: new TextStyle(
-      fontSize: 14.0,
-      color: Colors.black,
-    ),
-    children: <TextSpan>[
-      new TextSpan(text: 'עלמיא'),
-      new TextSpan(
-          text: ' לא ',
-          style: new TextStyle(fontWeight: FontWeight.bold, color: darkPurple)),
-      new TextSpan(
-          text:
-              'תגיד לך מה להחליט, או תחליט בשבילך. עלמיא לא תיצור קשר עם אנשים שלא תרצי')
-    ],
-  );
-  final TextSpan thirdParagragh = new TextSpan(
-    style: new TextStyle(
-      fontSize: 14.0,
-      color: Colors.black,
-    ),
-    children: <TextSpan>[
-      new TextSpan(
-        text: 'זה הגוף שלך וההחלטה שלך. ',
-        style: new TextStyle(fontWeight: FontWeight.bold, color: darkPurple),
-      ),
-      new TextSpan(text: 'אנחנו רק פה לעזור וללוות בזמן המבלבל הזה'),
-    ],
-  );
-
-  final double textScale = 1.4;
 
   @override
   Widget build(BuildContext context) {
+    var continueButton = Padding(
+      padding: EdgeInsets.only(
+        top: 10,
+      ),
+      child: Button(
+        text: "המשיכי",
+        onPressed: () => Navigator.pushNamed(context, '/signUpPage'),
+      ),
+    );
+
+    final TextSpan firstParagraph = new TextSpan(
+      style: baseStyle,
+      text:
+          "ברוכה הבאה לעלמיא - \nמרחב בטוח ופרטי לנערות. עלמיא תנסה לעזור לך אם את מתמודדת עם הריון, או חושבת שאולי את בהריון.",
+    );
+    final TextSpan secondParagraph = new TextSpan(
+      style: baseStyle,
+      children: <TextSpan>[
+        new TextSpan(text: 'עלמיא'),
+        new TextSpan(
+          text: ' לא ',
+          style: boldStyle,
+        ),
+        new TextSpan(
+            text:
+                'תגיד לך מה להחליט, או תחליט בשבילך. עלמיא לא תיצור קשר עם אנשים שלא תרצי')
+      ],
+    );
+    final TextSpan thirdParagraph = new TextSpan(
+      style: baseStyle,
+      children: <TextSpan>[
+        new TextSpan(
+          text: 'זה הגוף שלך וההחלטה שלך. ',
+          style: boldStyle,
+        ),
+        new TextSpan(text: 'אנחנו רק פה לעזור וללוות בזמן המבלבל הזה'),
+      ],
+    );
+
+    var paragraphs = [firstParagraph, secondParagraph, thirdParagraph];
+
+    var mainCardContent = ListView.separated(
+      padding: EdgeInsets.only(top: 10),
+      itemCount: paragraphs.length,
+      separatorBuilder: (BuildContext context, int index) => line,
+      itemBuilder: (BuildContext context, int index) {
+        return RichText(
+          text: paragraphs[index],
+          textDirection: TextDirection.rtl,
+        );
+      },
+    );
+
     return AlmiyaPage(
       child: Column(
         children: [
           Row(
             children: [
-              Container(
-                height: 120,
-                child: Image(
-                  image: AssetImage("assets/images/logo.png"),
-                  fit: BoxFit.fill,
-                ),
-              )
+              Logo(),
             ],
           ),
           Row(
@@ -62,55 +78,15 @@ class NewUserPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   MainCard(
-                    width: 320,
-                    height: 470,
+                    width: MediaQuery.of(context).size.width * 0.85,
+                    height: 450,
                     title: "שלום לך!",
                     child: Padding(
-                      padding: EdgeInsets.fromLTRB(32, 0, 32, 0),
-                      child: Column(
-                        children: [
-                          Text(
-                            this.firstParagragh,
-                            maxLines: 6,
-                            textDirection: TextDirection.rtl,
-                            textScaleFactor: this.textScale,
-                          ),
-                          Divider(
-                            color: Colors.black,
-                            height: 25,
-                            thickness: 1,
-                            indent: 0,
-                            endIndent: 0,
-                          ),
-                          RichText(
-                            text: this.secondParagragh,
-                            textDirection: TextDirection.rtl,
-                            textScaleFactor: this.textScale,
-                          ),
-                          Divider(
-                            color: Colors.black,
-                            height: 25,
-                            thickness: 1,
-                            indent: 0,
-                            endIndent: 0,
-                          ),
-                          RichText(
-                            text: this.thirdParagragh,
-                            textDirection: TextDirection.rtl,
-                            textScaleFactor: this.textScale,
-                          ),
-                        ],
-                      ),
+                      padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                      child: mainCardContent,
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                    child: Button(
-                      text: "המשיכי",
-                      onPressed: () =>
-                          Navigator.pushNamed(context, '/signUpPage'),
-                    ),
-                  ),
+                  continueButton,
                 ],
               ),
             ],
