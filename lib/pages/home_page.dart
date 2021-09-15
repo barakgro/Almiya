@@ -1,10 +1,10 @@
-import 'package:Almiya/almiya_icons.dart';
-import 'package:Almiya/components/logo.dart';
-import 'package:Almiya/consts.dart';
+import 'package:almiya/almaya_icons.dart';
+import 'package:almiya/components/logo.dart';
+import 'package:almiya/consts.dart';
 import 'package:flutter/material.dart';
-import 'package:Almiya/components/main_card.dart';
-import 'package:Almiya/components/almiya_page.dart';
-import 'package:Almiya/components/menu_option.dart';
+import 'package:almiya/components/main_card.dart';
+import 'package:almiya/components/almiya_page.dart';
+import 'package:almiya/components/menu_option.dart';
 
 class VerticalDividerHomePage extends StatelessWidget {
   @override
@@ -37,32 +37,30 @@ class HomePage extends StatelessWidget {
       ],
     );
 
-    var menueOptions = {
-      "whatYouNeed": MenuOption(
-        "קחו אותי למה שאני צריכה",
-        Almiya.search,
-        optionSize,
-        "/whatYouNeedPage",
-      ),
-      "connectToPlaces": MenuOption(
-        "חברו אותי לגופים שיכולים לעזור",
-        Almiya.connect,
-        optionSize,
-        "/connectToPlacesPage",
-      ),
-      "WrightAMessage": MenuOption(
-        "הייתי רוצה לכתוב לכם משהו",
-        Almiya.message,
-        optionSize,
-        "/contactUsPage",
-      ),
-      "Information": MenuOption(
-        "יש לי שאלות, אני צריכה מידע",
-        Almiya.book,
-        optionSize,
-        "/informationPage",
-      ),
-    };
+    var whatYouNeedOption = MenuOption(
+        title: "קחו אותי למה שאני צריכה",
+        icon: Almaya.search,
+        size: optionSize,
+        url: "/whatYouNeedPage",
+      );
+    var connectToPlacesOption = MenuOption(
+        title: "חברו אותי לגופים שיכולים לעזור",
+        icon: Almaya.connect,
+        size: optionSize,
+        url: "/connectToPlacesPage",
+      );
+    var writeAMessageOption = MenuOption(
+        title: "הייתי רוצה לכתוב לכם משהו",
+        icon: Almaya.message,
+        size: optionSize,
+        url: "/contactUsPage",
+      );
+    var informationOption = MenuOption(
+        title: "יש לי שאלות, אני צריכה מידע",
+        icon: Almaya.book,
+        size: optionSize,
+        url: "/informationPage",
+      );
 
     return AlmiyaPage(
       child: Column(
@@ -85,9 +83,9 @@ class HomePage extends StatelessWidget {
                       textDirection: TextDirection.rtl,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        menueOptions["whatYouNeed"],
+                        whatYouNeedOption,
                         VerticalDividerHomePage(),
-                        menueOptions["connectToPlaces"],
+                        connectToPlacesOption,
                       ],
                     ),
                   ),
@@ -102,9 +100,9 @@ class HomePage extends StatelessWidget {
                     textDirection: TextDirection.rtl,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      menueOptions["WrightAMessage"],
+                      writeAMessageOption,
                       VerticalDividerHomePage(),
-                      menueOptions["Information"],
+                      informationOption,
                     ],
                   ),
                 ),

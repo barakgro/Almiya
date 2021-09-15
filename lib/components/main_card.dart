@@ -1,14 +1,15 @@
-import 'package:Almiya/consts.dart';
+import 'package:almiya/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CardPainter extends CustomPainter {
-  CardPainter({
-    @required this.title,
-  });
-
+  
   final String title;
   final Color darkPurple = Color(0xff542d53);
+  
+  CardPainter({
+    this.title = "",
+  });
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -16,6 +17,7 @@ class CardPainter extends CustomPainter {
       text: TextSpan(
         text: this.title,
         style: TextStyle(
+          // fontFamily: "Assistant",
           fontSize: titleSize,
           color: this.darkPurple,
           fontWeight: FontWeight.w900,
@@ -80,17 +82,17 @@ class CardPainter extends CustomPainter {
 }
 
 class MainCard extends StatelessWidget {
-  MainCard({
-    this.title,
-    this.child,
-    this.height = 450,
-    this.width = 310,
-  });
-
   final String title;
   final Widget child;
   final double height;
   final double width;
+
+  MainCard({
+    this.title = "",
+    required this.child,
+    this.height = 450,
+    this.width = 310,
+  });
 
   @override
   Widget build(BuildContext context) {

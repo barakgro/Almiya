@@ -1,10 +1,10 @@
-import 'package:Almiya/components/almiya_page.dart';
-import 'package:Almiya/components/button.dart';
-import 'package:Almiya/components/logo.dart';
-import 'package:Almiya/components/text_input.dart';
-import 'package:Almiya/consts.dart';
+import 'package:almiya/components/almiya_page.dart';
+import 'package:almiya/components/button.dart';
+import 'package:almiya/components/logo.dart';
+import 'package:almiya/components/text_input.dart';
+import 'package:almiya/consts.dart';
 import 'package:flutter/material.dart';
-import 'package:Almiya/almiya_icons.dart';
+import 'package:almiya/almaya_icons.dart';
 
 class SignUpPage extends StatelessWidget {
   final TextSpan pageText = new TextSpan(
@@ -42,7 +42,7 @@ class SignUpPage extends StatelessWidget {
             ),
           ),
           IconedTextField(
-            icon: Almiya.face,
+            icon: Almaya.face,
             hintText: "קוראים לי",
           ),
           IconedTextField(

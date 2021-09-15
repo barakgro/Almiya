@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+// import 'package:provider/provider.dart';
 
 import '../consts.dart';
 
 class AlmiyaPage extends StatelessWidget {
-  AlmiyaPage({
-    this.child,
-  });
-
   final Widget child;
+
+  AlmiyaPage({
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {

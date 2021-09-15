@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RadioButtons extends StatefulWidget {
-  RadioButtons({Key key}) : super(key: key);
+  RadioButtons({required Key key}) : super(key: key);
 
   @override
   RadioButtonsState createState() => RadioButtonsState();
@@ -11,8 +11,8 @@ class RadioButtonsState extends State<RadioButtons> {
 
   var textArray = ["כן", "נראה לי, אבל אני לא יודעת בדיוק לנסח אותה", "לא בדיוק"];
   var valuesArray = ["yes", "think_so", "not_exactly"];
-  String selectedValue = "think_so";
-  void setSelectedValue(String value) => setState(() => selectedValue = value);
+  String? selectedValue = "think_so";
+  void setSelectedValue(String? value) => setState(() => selectedValue = value);
 
   TextStyle textStyle = TextStyle(
       color: Color(0xff542d53),
@@ -21,7 +21,7 @@ class RadioButtonsState extends State<RadioButtons> {
   );
 
   Widget makeRadios() {
-    List<Widget> radioList = new List();
+    List<Widget> radioList = [];
     for(int i = 0; i < valuesArray.length; i++) {
       radioList.add(
         new RadioListTile(

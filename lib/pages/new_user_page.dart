@@ -1,9 +1,9 @@
-import 'package:Almiya/components/button.dart';
-import 'package:Almiya/components/logo.dart';
-import 'package:Almiya/components/main_card.dart';
-import 'package:Almiya/consts.dart';
+import 'package:almiya/components/button.dart';
+import 'package:almiya/components/logo.dart';
+import 'package:almiya/components/main_card.dart';
+import 'package:almiya/consts.dart';
 import 'package:flutter/material.dart';
-import 'package:Almiya/components/almiya_page.dart';
+import 'package:almiya/components/almiya_page.dart';
 
 class NewUserPage extends StatelessWidget {
 
