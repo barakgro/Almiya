@@ -1,21 +1,21 @@
-import 'package:Almiya/components/gradient_icon.dart';
+import 'package:almiya/components/gradient_icon.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../consts.dart';
 
 class MenuOption extends StatelessWidget {
-  MenuOption(
-    this.title,
-    this.icon,
-    this.size,
-    this.url,
-  );
-
   final String title;
   final IconData icon;
   final double size;
   final String url;
+  
+  MenuOption({
+    this.title = "",
+    required this.icon,
+    this.size = 90,
+    this.url = "",
+  });
 
   @override
   Widget build(BuildContext context) {

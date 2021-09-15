@@ -1,6 +1,6 @@
-import 'package:Almiya/components/button.dart';
+import 'package:almiya/components/button.dart';
 import 'package:flutter/material.dart';
-import 'package:Almiya/components/almiya_page.dart';
+import 'package:almiya/components/almiya_page.dart';
 
 class WelcomePage extends StatelessWidget {
 

@@ -1,6 +1,6 @@
-import 'package:Almiya/consts.dart';
+import 'package:almiya/consts.dart';
 import 'package:flutter/material.dart';
-import 'package:Almiya/components/almiya_page.dart';
+import 'package:almiya/components/almiya_page.dart';
 
 class MessagesPage extends StatelessWidget {
 

@@ -1,20 +1,20 @@
-import 'package:Almiya/consts.dart';
+import 'package:almiya/consts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class IconedTextField extends StatelessWidget {
-  IconedTextField({
-    @required this.icon,
-    @required this.hintText,
-    this.width = 0,
-    this.obscureText = false,
-  });
-
   final IconData icon;
   final String hintText;
   final double width;
   final Color color = themeColor;
   final bool obscureText;
+
+  IconedTextField({
+    required this.icon,
+    required this.hintText,
+    this.width = 0,
+    this.obscureText = false,
+  });
 
   @override
   Widget build(BuildContext context) {
