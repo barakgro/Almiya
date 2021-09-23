@@ -7,20 +7,42 @@ import 'package:almiya/pages/welcome_page.dart';
 import 'package:almiya/pages/login.dart';
 import 'package:almiya/pages/what_you_need_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'home_page.dart';
 import 'new_user_page.dart';
 import '../consts.dart';
 
+class UsernameModel extends ChangeNotifier {
+  String _username = "";
+
+  String get username => _username;
+
+  void setUsername(String username) {
+    _username = username;
+    notifyListeners();
+  }
+
+  void logout() {
+    _username = "";
+    notifyListeners();
+  }
+}
+
 void main() {
-  runApp(new MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => UsernameModel(),
+      child: new MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Named Routes Demo',
+      title: 'Almaya',
       theme: ThemeData(
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
