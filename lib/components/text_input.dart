@@ -8,10 +8,12 @@ class IconedTextField extends StatelessWidget {
   final double width;
   final Color color = themeColor;
   final bool obscureText;
-
+  final TextEditingController controller;
+  
   IconedTextField({
     required this.icon,
     required this.hintText,
+    required this.controller,
     this.width = 0,
     this.obscureText = false,
   });
@@ -25,6 +27,7 @@ class IconedTextField extends StatelessWidget {
         height: 65,
         padding: EdgeInsets.only(top:7.0, bottom:7.0),
         child: TextField(
+          controller: this.controller,
           obscureText: this.obscureText,
           autocorrect: true,
           textDirection: TextDirection.rtl,

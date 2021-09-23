@@ -6,7 +6,14 @@ import 'package:almiya/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:almiya/almaya_icons.dart';
 
-class SignUpComplitionPage extends StatelessWidget {
+class SignUpComplitionPage extends StatefulWidget {
+  const SignUpComplitionPage({Key? key}) : super(key: key);
+
+  @override
+  SignUpComplitionState createState() => SignUpComplitionState();
+}
+
+class SignUpComplitionState extends State<SignUpComplitionPage> {
   final TextSpan pageText = new TextSpan(
     style: baseStyle,
     children: <TextSpan>[
@@ -15,6 +22,17 @@ class SignUpComplitionPage extends StatelessWidget {
               "אנחנו שמחות להכיר אותך, אורנית\nכדי לאפשר לך יותר פרטיות ולזכור יחד איתך איפה היית כשאת יוצאת וחוזרת, אנא צרי חשבון:"),
     ],
   );
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController passwordCheckController = TextEditingController();
+
+  @override
+  void dispose() {
+    usernameController.dispose();
+    passwordController.dispose();
+    passwordCheckController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,16 +67,19 @@ class SignUpComplitionPage extends StatelessWidget {
           IconedTextField(
             icon: Almaya.face,
             hintText: "שם משתמשת",
+            controller: usernameController,
           ),
           IconedTextField(
             icon: Icons.lock,
             hintText: "סיסמה",
             obscureText: true,
+            controller: passwordController,
           ),
           IconedTextField(
             icon: Almaya.asterisk,
             hintText: "אימות סיסמה",
             obscureText: true,
+            controller: passwordCheckController,
           ),
           Button(
             text: "הירשמי",
