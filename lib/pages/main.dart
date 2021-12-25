@@ -1,5 +1,6 @@
 import 'package:almiya/pages/connect_to_places_page.dart';
-import 'package:almiya/pages/information_main_page.dart';
+import 'package:almiya/pages/information_page/information_main_page.dart';
+import 'package:almiya/pages/information_page/unprotected_intercourse.dart';
 import 'package:almiya/pages/messages_page.dart';
 import 'package:almiya/pages/sign_up_complition_page.dart';
 import 'package:almiya/pages/sign_up_page.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
         '/whatYouNeedPage': (context) => WhatYouNeedPage(),
         '/contactUsPage': (context) => MessagesPage(),
         '/connectToPlacesPage': (context) => ConnectToPlacesPage(),
+        '/information/unprotectedIntercourse': (context) => UnprotectedIntercourse(),
       },
     );
   }
